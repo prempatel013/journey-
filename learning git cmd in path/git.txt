@@ -1,0 +1,14 @@
+git init
+git remote add origin https://github.com/prempatel013/journey-.git
+git add .
+git commit -m "Initial commit after moving project"
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+
+
+
+
+
+git branch -m master main           # Rename branch locally
+git push -u origin main             # Push `main` to remote and track it
+git push origin --delete master     # (Optional) Delete `master` branch on remote

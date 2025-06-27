@@ -132,13 +132,12 @@ print(f"{miles} miles = {km:.2f} km")  # :.2f rounds to 2 decimals
 """
 📝 My Personal Notes:
 
-[Add your own notes here as you learn]
-- Date: [YYYY-MM-DD] 
-- Note: [Your observation]
+- Date: [2025-06-25] 
+ 
 
 Example:
-- 2023-10-01: Learned that // does floor division (drops decimals)
-- 2023-10-01: Remember to convert input() for numbers!
+- 2023-06-25: Learned that // does floor division (drops decimals)
+- 2023-06-25: Remember to convert input() for numbers!
 """
 
 # ================ 🚀 WHAT'S NEXT? ================

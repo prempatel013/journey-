@@ -28,3 +28,63 @@
 
 =>Example:
             -> git add my_script.py
+
+
+
+=>go back to your last commit, discarding changes
+->git restore .  (this will restore for all files)
+
+=>for one specific file 
+->git restore .
+
+
+
+=>✅ Situation: You staged changes but didn’t commit yet
+    (i.e., you ran git add but didn’t git commit)
+
+Undo staging:
+
+-> git reset
+
+
+===>✅ Situation: You already committed but want to undo the commit
+
+
+==>Option 1: Undo the last commit (keep your changes as unstaged)
+ 
+      ----->  git reset --soft HEAD~1
+                ->"Go back 1 commit but keep all the code in working directory and staging area."
+
+
+
+==>Option 2: Undo last commit and keep changes as uncommitted
+
+      ------>git reset --mixed HEAD~1
+            ->Removes the commit, keeps changes as unstaged.
+
+==>Option 3: Undo last commit and discard all changes
+
+
+    =========>⚠️ Dangerous: This erases everything from that commit:
+
+ 
+            --->git reset --hard HEAD~1
+
+
+        --->🧠 Tip: Always check status before doing destructive commands
+
+        ===>git status
+
+
+        Summary Cheat Sheet:
+        
+        You want to...                                              	Command
+        Discard changes in working dir	                          -->   git restore .
+        Unstage files	                                          -->   git reset
+        Undo last commit (keep changes)	                          -->   git reset --soft HEAD~1
+        Undo last commit (unstaged changes)                       -->	git reset --mixed HEAD~1
+        Undo last commit (delete everything)	                  -->   git reset --hard HEAD~1
+
+
+
+

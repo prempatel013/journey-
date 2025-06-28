@@ -1,16 +1,23 @@
 # Project 2: Smart Shopping Cart 🛒
 # Concepts: Nested Dictionaries, List Comprehensions
 # Enhancement Ideas:
-
-def add_item(cart):
-    item = input("Item name: ")
-    price = float(input("Price: $"))
+def add_item(cart, items):
+    item = input("Item name: ").lower()
+    
+    if item in items:
+        price = float(items[item].replace('$', ''))
+        print(f"✔️  Found {item} in stock at ${price:.2f}")
+    else:
+        print("❌ Item not found in stock. Please enter a custom price.")
+        price = float(input("Price: $"))
+    
     quantity = int(input("Quantity: "))
     
     if item in cart:
         cart[item]["quantity"] += quantity
     else:
         cart[item] = {"price": price, "quantity": quantity}
+
 
 def checkout(cart):
     print("\n🧾 RECEIPT:")
@@ -22,13 +29,32 @@ def checkout(cart):
     
     print(f"\nTOTAL: ${total:.2f}")
     return total
+items = {
+    'earbuds': '25$',
+    'iphone': '500$',
+    'microphone': '13$',
+    'macbook': '750$',
+    'bread': '0.5$',
+}
+
+# Create header
+print(f"{'| Item':<15}| {'Price |':<10}")
+print("-" * 26)
+
+# Sort by price (optional)
+sorted_items = sorted(items.items(), key=lambda x: float(x[1].replace('$', '')))
+
+# Print each row
+for name, price in sorted_items:
+    print(f"| {name.capitalize():<13}| {price:<7}|")
 
 # Main program
 shopping_cart = {}
 while True:
-    print("\nOptions: 1. Add Item 2. Checkout")
+     
+    print(f"\n  Options: 1. Add Item 2. Checkout")
     if input("Choice: ") == "1":
-        add_item(shopping_cart)
+        add_item(shopping_cart,items)
     else:
         checkout(shopping_cart)
         break

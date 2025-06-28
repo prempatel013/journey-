@@ -1,20 +1,30 @@
-git init
-git remote add origin https://github.com/prempatel013/journey-.git
-git add .
-git commit -m "Initial commit after moving project"
-git pull origin main --allow-unrelated-histories
-git push -u origin main
+-> git init
+-> git remote add origin https://github.com/prempatel013/journey-.git
+-> git add .
+-> git commit -m "Initial commit after moving project"
+-> git pull origin main --allow-unrelated-histories
+-> git push -u origin main
 
 
 
 
 
-git branch -m master main           # Rename branch locally
-git push -u origin main             # Push `main` to remote and track it
-git push origin --delete master     # (Optional) Delete `master` branch on remote
+-> git branch -m master main           # Rename branch locally
+-> git push -u origin main             # Push `main` to remote and track it
+-> git push origin --delete master     # (Optional) Delete `master` branch on remote
 
 
-git add .
-git commit -m "Describe what you changed"
-git push
-git status
+-> git add .
+-> git commit -m "Describe what you changed"
+-> git push
+-> git status
+
+
+
+=> if i want to push one file that i have changed and want to push so 
+
+
+->  git add path/to/your_file.py
+
+=>Example:
+            -> git add my_script.py

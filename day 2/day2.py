@@ -30,6 +30,8 @@ Key Points:
 
 # 🛠️ Example 1: Basic if-else
 print("\n--- Example 1: Temperature Check ---")
+
+
 temp = float(input("Enter current temperature (°C): "))
 
 if temp > 30:
@@ -63,6 +65,20 @@ Write a program that:
    - D (60-69)
    - F (<60)
 """
+
+grade=int(input("Enter your Grade buddy👂: "))
+if grade>=90:
+    print('you got A Grade congratulations 🎉')
+
+elif grade>=80:
+    print('you got B Grade congratulations 🎉')
+elif grade>=70:
+    print('you got C Grade congratulations 🎉')
+elif grade>=60:
+    print('you got D Grade ')
+elif grade<60:
+    print("you got F Grade")
+
 
 # ================ 2. LOOPS ================
 print("\n" + "="*50 + "\n🔄 LOOPS (for/while)\n" + "="*50)
@@ -111,6 +127,10 @@ Example output for 5:
 ...
 5 x 10 = 50
 """
+num=int(input('enter the number: '))
+for i in range (1,11):  #here i used range that is built in function that  generate a sequence of numbers.It generates numbers starting from 1 (inclusive)
+# Up to but not including 11 (so it stops at 10)
+    print(f'{num}X{i} = {num*i}  ')
 
 # ================ 3. LISTS & TUPLES ================
 print("\n" + "="*50 + "\n📚 LISTS & TUPLES\n" + "="*50)
@@ -160,6 +180,28 @@ Build a program that:
    - Quit
 Use while loop to keep running until quit
 """
+'''here is solution of i did 
+
+menu_list=[]
+
+while True:
+
+    ask=int(input('what do you want to do : \n 1.add task \n 2.Remove task \n 3.View all tasks \n 4.Quit\n'))
+
+    if ask==1:
+        task=input("so write which task you want to add: ")
+        menu_list.append(task)
+        
+    elif ask==2:
+        remove=input(f'{menu_list} which task you want to remove')
+        menu_list.remove(remove)
+    elif ask==3:
+        print(f"{menu_list}")
+    elif ask==4:
+        quit()
+        
+        
+        '''
 
 # ================ 4. ERROR HANDLING ================
 print("\n" + "="*50 + "\n⚠️ ERROR HANDLING (try/except)\n" + "="*50)
@@ -209,14 +251,55 @@ for question, correct_answer in questions:
 
 print(f"\nYour final score: {score}/{len(questions)}")
 
+# questions = [
+#     ("What is 2+2?", "4"),
+#     ("Capital of india?", "Delhi"),
+#     ("Python is interpreted or compiled?", "interpreted")
+# ]
+# so in  this project we  will create an quiz game :
+# so in first line we will anousefor quiz and ask for want to play this game or not :
+score=0
+ask=input("Do you want to play this game? (yes/no): ")
+
+
+if ask!="yes":
+    quit()            
+            
+que1=input('What is 2+2? ')
+            
+if que1=="4":
+    score+=1
+    print(f"right answer 👍!! score is :{score}")
+else:
+    print(f"wrong answer❌")
+
+que2=input("Capital of india?")
+    
+if que2.lower()=="delhi":
+    score+=1
+    print(f"right answer 👍!! score is :{score}")
+
+else:
+    print('wrong answer!!❌')
+            
+que3=input("Python is interpreted or compiled?")
+        
+if que3.lower()=="interpreted":
+    score+=1
+    print(f"right answer 👍!! score is :{score}")
+            
+else:
+    print("wrong answer!!❌")
+
+print(f"your score is {score}")
 # ================ 📝 NOTES SECTION ================
 """
 📝 My Personal Notes:
 
 [Add your observations here]
 Example:
-- 2023-10-02: Remember that list indices start at 0!
-- 2023-10-02: 'break' exits the entire loop, 'continue' skips to next iteration
+- 2025-06-25: Remember that list indices start at 0!
+- 2025-06-25: 'break' exits the entire loop, 'continue' skips to next iteration
 """
 
 # ================ 🚀 WHAT'S NEXT? ================

@@ -29,6 +29,8 @@ def greet(name):
     """Returns a personalized greeting"""  # Docstring (documentation)
     return f"Hello, {name}! Welcome to Python."
 
+# rether than doing this ============
+
 message = greet("Alice")
 print(message)
 
@@ -50,6 +52,21 @@ Create a function that:
    - Medium: 8-12 chars, no special characters
    - Strong: >12 chars with special chars (!,@,#, etc.)
 """
+
+def check_password_strength(password):
+    special_chars = "!@#$%^&*()-_=+[]{}|;:'\",.<>?/\\`~"
+
+    if len(password) < 8:
+        return "Weak"
+    elif 8 <= len(password) <= 12 and not any(char in special_chars for char in password):
+        return "Medium"
+    elif len(password) > 12 and any(char in special_chars for char in password):
+        return "Strong"
+    else:
+        return "Medium"
+
+print(check_password_strength("here enter your password to check it is strong or not!!!"))
+
 
 # ================ 2. DICTIONARIES ================
 print("\n" + "="*50 + "\n📚 DICTIONARIES\n" + "="*50)
@@ -95,11 +112,31 @@ Write a function that:
 2. Returns a dictionary with word counts
    {'hello': 2, 'world': 1}
 """
+def count_words(text):
+    words = text.split()
+    word_counts = {}
+
+    for word in words:
+        if word in word_counts:
+            word_counts[word] += 1
+        else:
+            word_counts[word] = 1
+
+    return word_counts
+
+print(count_words("helo my name is prem helo" ))
+
+
+
+
 
 # ================ 3. ADVANCED LIST OPERATIONS ================
+
+
 print("\n" + "="*50 + "\n📈 ADVANCED LISTS\n" + "="*50)
 
 # 🛠️ Example 1: List Slicing
+
 print("\n--- Example 1: List Slicing ---")
 numbers = [10, 20, 30, 40, 50, 60]
 print("Middle elements:", numbers[2:5])  # [30, 40, 50]
@@ -124,6 +161,19 @@ Create a new list with only unique words using:
 1. List comprehension
 2. Or convert to set and back to list
 """
+
+def get_unique_words(words):
+    unique_words = []
+    [unique_words.append(word) for word in words if word not in unique_words]
+    return unique_words
+
+# Example usage
+words = ["apple", "banana", "apple", "orange", "banana"]
+print(get_unique_words(words))
+
+# Output: ['apple', 'banana', 'orange']
+
+
 
 # ================ 4. MODULES ================
 print("\n" + "="*50 + "\n📦 MODULES\n" + "="*50)
@@ -157,7 +207,24 @@ Use the 'datetime' module to:
 2. Format it as "Month Day, Year" (e.g., "October 03, 2023")
 """
 
-# ================ 🎯 DAY 3 PROJECTS ================
+
+# ===========
+from datetime import datetime
+
+
+now = datetime.now()
+
+# Format as MM-DD-YYYY
+formatted_date = now.strftime("%m-%d-%Y")
+print(formatted_date)
+
+
+
+
+
+
+
+# ===== 🎯 DAY 3 PROJECTS ================
 print("\n" + "="*50 + "\n🎯 DAY 3 PROJECTS\n" + "="*50)
 
 # Project 1: User Profile Manager
@@ -195,11 +262,11 @@ show_movies()
 # ================ 📝 NOTES SECTION ================
 """
 📝 My Personal Notes:
+ 
 
-[Add your observations here]
 Example:
-- 2023-10-03: Remember that dictionary keys must be immutable (strings, numbers, tuples)
-- 2023-10-03: Functions can return multiple values as tuples!
+- 2025-06-27: Remember that dictionary keys must be immutable (strings, numbers, tuples)
+- 2025-06-27: Functions can return multiple values as tuples!
 """
 
 # ================ 🚀 WHAT'S NEXT? ================

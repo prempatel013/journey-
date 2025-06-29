@@ -27,10 +27,13 @@ def write_diary(entry):
         file.write(f"{entry}\n")
     print("✓ Entry saved!")
 
-write_diary("2023-10-04: Learned file handling in Python!")
+write_diary("2025-06-28: Learned file handling in Python!")
+
 
 # 🛠️ Example 2: Reading from a File
 print("\n--- Example 2: Reading Config ---")
+
+
 def read_config():
     try:
         with open("config.txt") as file:
@@ -50,6 +53,9 @@ Create a function that:
    - Word count
    - Most common word
 """
+
+
+
 
 # ================ 2. OBJECT-ORIENTED PROGRAMMING ================
 print("\n" + "="*50 + "\n🧩 OBJECT-ORIENTED PROGRAMMING (OOP)\n" + "="*50)
@@ -112,6 +118,10 @@ Create a 'Book' class with:
 - Method: get_summary() returns "Title by Author (X pages)"
 Create 2 book objects and print their summaries
 """
+
+
+
+
 
 # ================ 3. WORKING WITH JSON ================
 print("\n" + "="*50 + "\n📦 JSON DATA\n" + "="*50)

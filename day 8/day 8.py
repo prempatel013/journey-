@@ -207,6 +207,7 @@ print("\n" + "="*60 + "\n🏆 5. REAL-TIME DASHBOARD\n" + "="*60)
 from fastapi import WebSocketDisconnect
 import random
 import json
+import time
 
 @app.websocket("/dashboard")
 async def dashboard_websocket(websocket: WebSocket):

@@ -54,6 +54,61 @@ Create a function that:
    - Most common word
 """
 
+# 🎯 Exercise 1: File Analyzer
+"""
+Create a function that:
+1. Takes a filename
+2. Returns:
+   - Line count
+   - Word count
+   - Most common word
+"""
+def analyze_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+
+        line_count = len(lines)
+        words = []
+
+        for line in lines:
+            # Normalize to lowercase and split by whitespace
+            for word in line.strip().lower().split():
+                # Remove punctuation manually (basic version)
+                clean_word = ''.join(char for char in word if char.isalnum())
+                if clean_word:
+                    words.append(clean_word)
+
+        word_count = len(words)
+
+        # Count most common word manually
+        word_freq = {}
+        for word in words:
+            if word in word_freq:
+                word_freq[word] += 1
+            else:
+                word_freq[word] = 1
+
+        most_common_word = None
+        max_count = 0
+        for word, count in word_freq.items():
+            if count > max_count:
+                most_common_word = word
+                max_count = count
+
+        return line_count, word_count, most_common_word
+
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+        return None, None, None
+    
+print(analyze_file("text.txt"))
+
+
+
+
+
+
 
 
 

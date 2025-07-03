@@ -16,3 +16,5 @@ for i in range(1,21):
         
     elif  i % 3 == 0 and i%5 ==0:
         print(f"{i} is divisible by both: FizzBuzz")
+    else:
+        print(f"{i}")

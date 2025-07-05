@@ -105,7 +105,7 @@ class TestInvestment(unittest.TestCase):
     @patch('requests.get')
     def test_api_integration(self, mock_get):
         mock_get.return_value.json.return_value = {'rate': 0.05}
-        from my_package.core import get_interest_rate
+        from my_package.core import get_interest_rate # type: ignore
         rate = get_interest_rate()
         self.assertEqual(rate, 0.05)
 

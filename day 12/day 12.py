@@ -123,8 +123,8 @@ async def create_db_task(task: Task, db=Depends(get_db), user_id: str = "demo-us
 # ================ 3. AUTHENTICATION & SECURITY ================
 print("\n" + "="*60 + "\n🔐 3. AUTHENTICATION SYSTEM\n" + "="*60)
 
-from passlib.context import CryptContext
-from jose import JWTError, jwt
+from passlib.context import CryptContext # type: ignore
+from jose import JWTError, jwt   # type: ignore
 from datetime import timedelta
 
 # Security config
@@ -184,7 +184,7 @@ print("\n" + "="*60 + "\n🚀 4. TESTING & DEPLOYMENT\n" + "="*60)
 
 # 🛠️ Example 3: Automated Tests
 from fastapi.testclient import TestClient
-import pytest
+import pytest # type: ignore
 
 client = TestClient(app)
 
@@ -208,7 +208,7 @@ print("""
 3. Docker Example:
    # Dockerfile
    FROM python:3.9
-   COPY . /app
+   COPY . /app   
    WORKDIR /app
    RUN pip install -r requirements.txt
    CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app"]
@@ -275,6 +275,6 @@ print("""
 """)
 
 if __name__ == "__main__":
-    import uvicorn
+    import uvicorn 
     print("\n" + "="*60 + "\n🌍 STARTING DEVELOPMENT SERVER\n" + "="*60)
     uvicorn.run(app, host="0.0.0.0", port=8000)
